@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- the nav bar -->
+    <nav>
+      <h2>Recipe Book</h2>
+      <a>Authentificate</a>
+      <a>Shopping list</a>
+    </nav>
+
+    <!-- the page container -->
+    <div class="main-content">
+      <!-- grid layout -->
+      <div class="container grid">
+        <!-- first column -->
+        <div class="grid-column-5">
+          <!-- new recipe button -->
+          <button class="button button-success">New Recipe</button>
+          <hr />
+          <!-- recipe list -->
+          <div class="recipe-list">
+            <div class="recipe-card">
+              <div class="recipe-info">
+                <h3>Toast</h3>
+                <p>adasd</p>
+              </div>
+              <img src="./images/toast.jpg" alt="recipe image" />
+            </div>
+            <div class="recipe-card">
+              <div class="recipe-info">
+                <h3>Avocado</h3>
+                <p>adasddsa sa sa sa sass sasa s</p>
+              </div>
+              <img src="./images/avocado.avif" alt="recipe image" />
+            </div>
+          </div>
+        </div>
+
+        <!-- second column -->
+        <div class="grid-column-7">
+          <!-- buttons -->
+          <div>
+            <button disabled class="button button-success">Save</button>
+            <button class="button button-dismiss">Cancel</button>
+          </div>
+          <!-- add form -->
+          <form class="form" action="">
+            <!-- name -->
+            <div class="form-input column">
+              <label for="name">Name</label>
+              <input
+                class="form-input-field"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Recipe Name"
+              />
+            </div>
+
+            <!-- img url -->
+            <div class="form-input column">
+              <label for="image-url">Image URL</label>
+              <input
+                class="form-input-field"
+                type="text"
+                name="image-url"
+                id="image-url"
+                placeholder="URL"
+              />
+            </div>
+
+            <!-- image -->
+            <div class="form-input row">
+              <img src="./images/avocado.avif" alt="recipe image" />
+            </div>
+
+            <!-- text - area -->
+            <div class="form-input column">
+              <label for="description">Description</label>
+              <textarea
+                class="form-input-field"
+                name="description"
+                id="description"
+                placeholder="Recipe Description"
+                style="max-width: 100%"
+              ></textarea>
+            </div>
+            <!-- ingredient list -->
+            <div style="margin-top: 16px">
+              <div class="form-input row" style="padding: 4px 0px; gap: 28px">
+                <input
+                  class="form-input-field"
+                  type="text"
+                  name="image-url"
+                  id="image-url"
+                  style="width: 60%"
+                />
+                <input
+                  class="form-input-field"
+                  type="text"
+                  name="image-url"
+                  id="image-url"
+                  style="width: 20%"
+                />
+                <button class="button button-dismiss">X</button>
+              </div>
+              <div class="form-input row" style="padding: 4px 0px; gap: 28px">
+                <input
+                  class="form-input-field"
+                  type="text"
+                  name="image-url"
+                  id="image-url"
+                  style="width: 60%"
+                />
+                <input
+                  class="form-input-field"
+                  type="text"
+                  name="image-url"
+                  id="image-url"
+                  style="width: 20%"
+                />
+                <button class="button button-dismiss">X</button>
+              </div>
+            </div>
+
+            <hr />
+            <button class="button button-success" style="width: fit-content">
+              Add ingredient
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
