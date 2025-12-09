@@ -251,6 +251,9 @@ hr {
 }
 
 @media only screen and (max-width: 768px) {
+  nav {
+    position: relative;
+  }
   nav h2 {
     font-size: var(--title-mobile-font-size);
   }
