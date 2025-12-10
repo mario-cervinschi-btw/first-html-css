@@ -54,18 +54,17 @@
         <!-- second column -->
         <section class="grid-column-right">
           <!-- add form -->
-          <form id="add-recipe-form" class="form" action="">
+          <form id="add-recipe-form" class="form" action="" method="post">
             <!-- buttons -->
             <div>
-              <button type="submit" disabled class="button button-success">
-                Save
-              </button>
+              <button type="submit" class="button button-success">Save</button>
               <button type="reset" class="button button-dismiss">Cancel</button>
             </div>
             <!-- name -->
             <div class="form-input column">
               <label for="name">Name</label>
               <input
+                tabindex="1"
                 class="form-input-field"
                 type="text"
                 name="name"
@@ -78,6 +77,7 @@
             <div class="form-input column">
               <label for="image-url">Image URL</label>
               <input
+                tabindex="2"
                 class="form-input-field"
                 type="text"
                 name="image-url"
@@ -95,6 +95,7 @@
             <div class="form-input column">
               <label for="description">Description</label>
               <textarea
+                tabindex="3"
                 class="form-input-field max-width-full"
                 name="description"
                 id="description"
@@ -102,44 +103,55 @@
               ></textarea>
             </div>
             <!-- ingredient list -->
-            <div>
-              <div class="form-input row ingredient-add-boxes">
-                <input
-                  class="form-input-field width-60"
-                  type="text"
-                  name="image-url"
-                  id="image-url"
-                />
-                <input
-                  class="form-input-field width-20"
-                  type="text"
-                  name="image-url"
-                  id="image-url"
-                />
-                <button class="button button-dismiss">X</button>
+            <form name="ingredient-list" class="form" action="" method="post">
+              <div class="form-input column">
+                <div class="form-input row ingredient-add-boxes">
+                  <input
+                    tabindex="4"
+                    required
+                    class="form-input-field width-60"
+                    type="text"
+                    name="ingredient-name-1"
+                    id="ingredient-name-1"
+                  />
+                  <input
+                    tabindex="5"
+                    required
+                    class="form-input-field width-20"
+                    type="text"
+                    name="ingredient-quantity-1"
+                    id="ingredient-quantity-1"
+                  />
+                  <button class="button button-dismiss">X</button>
+                </div>
+                <div class="form-input row ingredient-add-boxes">
+                  <input
+                    tabindex="6"
+                    class="form-input-field width-60"
+                    type="text"
+                    name="ingredient-name-2"
+                    id="ingredient-name-2"
+                  />
+                  <input
+                    tabindex="7"
+                    class="form-input-field width-20"
+                    type="text"
+                    name="ingredient-quantity-2"
+                    id="ingredient-quantity-2"
+                  />
+                  <button class="button button-dismiss">X</button>
+                </div>
               </div>
-              <div class="form-input row ingredient-add-boxes">
-                <input
-                  class="form-input-field width-60"
-                  type="text"
-                  name="image-url1"
-                />
-                <input
-                  class="form-input-field width-20"
-                  type="text"
-                  name="image-url2"
-                />
-                <button class="button button-dismiss">X</button>
-              </div>
-            </div>
 
-            <hr />
-            <button
-              type="button"
-              class="button button-success width-fit-content"
-            >
-              Add ingredient
-            </button>
+              <hr />
+              <button
+                tabindex="8"
+                type="submit"
+                class="button button-success width-fit-content"
+              >
+                Add ingredient
+              </button>
+            </form>
           </form>
         </section>
       </div>
