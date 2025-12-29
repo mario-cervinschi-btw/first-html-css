@@ -2,6 +2,8 @@
 // use the provided getter and setter functions to interact with the state
 // add your own if u need more functionality ;)
 
+import { renderEmployeeList } from '../features/employee-list/employee-list';
+
 let state = {
   allEmployees: [],
   filteredEmployees: [],
@@ -16,6 +18,10 @@ let state = {
  */
 export function getState() {
   return { ...state };
+}
+
+export function getStatusFilteredSize(status) {
+  return state.allEmployees.filter((val, _) => val.status === status);
 }
 
 /**
@@ -91,6 +97,7 @@ export function setFilteredEmployees(employees) {
     filteredEmployees: [...employees],
     currentPage: 1,
   };
+  renderEmployeeList();
 }
 
 /**

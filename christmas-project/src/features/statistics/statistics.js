@@ -2,12 +2,14 @@
 // you can use the selected elements to do the logic of setting the statistics data
 // from state to the view. The HTML elements should already exist and have these ids.
 
-import { stuff } from state
+import { getAllEmployees, getStatusFilteredSize } from '../../state/state.js';
 
 const totalCountSpan = document.getElementById('total-count');
 const positiveCountSpan = document.getElementById('positive-count');
 const negativeCountSpan = document.getElementById('negative-count');
 
-export function setStatistics() {
-
+export function renderEmployeeStatistics() {
+  totalCountSpan.textContent = getAllEmployees().length;
+  positiveCountSpan.textContent = getStatusFilteredSize('good').length;
+  negativeCountSpan.textContent = getStatusFilteredSize('naughty').length;
 }

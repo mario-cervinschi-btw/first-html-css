@@ -1,12 +1,5 @@
 export function createEmployeeCard(employee, clickHandler) {
   const card = document.createElement('article');
-  /*
-   *  HELPER COMMENT: Here we have an example of creating the card element.
-   * This was done with innerHTML for simplicity.
-   * but in real life this is not always recommended due to security risks.
-   * Try creating the same structure using only DOM methods.
-   * You can organize the html differently if you see fit. You might need to add changes nevertheless ;)
-   */
   const headerBtn = document.createElement('button');
   headerBtn.className = 'employee-header';
 
@@ -18,7 +11,11 @@ export function createEmployeeCard(employee, clickHandler) {
   headerRight.className = 'header-right';
 
   const statusSpan = document.createElement('span');
-  statusSpan.className = 'status-badge';
+  if (employee.status === 'naughty') {
+    statusSpan.classList.add('status-badge', 'bad');
+  } else {
+    statusSpan.classList.add('status-badge', 'good');
+  }
   statusSpan.textContent = employee.status;
 
   const icon = document.createElement('i');
@@ -63,8 +60,10 @@ export function createEmployeeCard(employee, clickHandler) {
 
   header.addEventListener('click', () => {
     toggleAccordion(header, details);
-    if (clickHandler) {
-      clickHandler(employee);
+    if (header.classList.contains('drawer-open')) {
+      if (clickHandler) {
+        clickHandler(employee);
+      }
     }
   });
 
@@ -74,6 +73,4 @@ export function createEmployeeCard(employee, clickHandler) {
 function toggleAccordion(header, details) {
   details.classList.toggle('show');
   header.classList.toggle('drawer-open');
-  // logic for toggling accordion, expanding/collapsing details
-  // toggle CSS classes using DOM methods, they should contain the logic for showing/hiding the details
 }

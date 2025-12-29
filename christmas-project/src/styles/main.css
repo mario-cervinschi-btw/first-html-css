@@ -44,6 +44,7 @@ body {
 }
 
 .aside {
+  height: fit-content;
   grid-area: aside;
   background-color: var(--color-snow-white);
   padding: var(--spacing-large);
@@ -134,6 +135,22 @@ h3 {
   gap: var(--spacing-medium);
 }
 
+.status-badge {
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: var(--spacing-medium);
+  font-weight: var(--font-bold);
+  color: var(--color-snow-white);
+}
+
+.status-badge.good {
+  background-color: var(--color-christmas-green);
+}
+
+.status-badge.bad {
+  background-color: var(--color-christmas-red);
+}
+
 .stat-item {
   display: flex;
   justify-content: space-between;
@@ -165,11 +182,19 @@ h3 {
   margin: 16px 0px 16px 0px;
 }
 
+#result-count {
+  font-weight: var(--font-bold);
+}
+
 .employee-header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 16px;
+}
+
+.employee-header:hover {
+  cursor: pointer;
 }
 
 .employee-header .header-right {
@@ -199,4 +224,10 @@ h3 {
 dl {
   display: grid;
   grid-template-columns: auto 1fr;
+}
+
+.recent-employees-list {
+  padding: 0px;
+  list-style: none;
+  color: var(--color-dark-gray);
 }
