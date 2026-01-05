@@ -6,6 +6,7 @@ import {
 import { createEmployeeCard } from '../employee-card/employee-card.js';
 import { initPagination } from '../pagination/pagination.js';
 import { updateRecentlyViewedList } from '../recently-viewed/recently-viewed.js';
+import { renderEmployeeStatistics } from '../statistics/statistics.js';
 
 const link = document.createElement('link');
 link.rel = 'stylesheet';
@@ -36,5 +37,6 @@ export function renderEmployeeList(employees) {
 export function renderPagedEmployeeList() {
   const pageEmployees = getEmployeesForCurrentPage();
   renderEmployeeList(pageEmployees);
+  renderEmployeeStatistics();
   initPagination();
 }

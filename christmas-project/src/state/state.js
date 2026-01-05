@@ -128,6 +128,26 @@ export function addToRecentlyViewed(employeeId) {
  */
 export function updateEmployeeInState(updatedEmployee) {
   // add logic here if you reach this point
+  state.allEmployees = state.allEmployees.map((emp) =>
+    emp.id === updatedEmployee.id ? { ...emp, ...updatedEmployee } : emp
+  );
+
+  state.filteredEmployees = state.filteredEmployees.map((emp) =>
+    emp.id === updatedEmployee.id ? { ...emp, ...updatedEmployee } : emp
+  );
+
+  renderPagedEmployeeList();
+}
+
+export function deleteEmployee(employeeId) {
+  state = {
+    ...state,
+    allEmployees: state.allEmployees.filter((emp) => emp.id !== employeeId),
+    filteredEmployees: state.filteredEmployees.filter(
+      (emp) => emp.id !== employeeId
+    ),
+  };
+  renderPagedEmployeeList();
 }
 
 /**

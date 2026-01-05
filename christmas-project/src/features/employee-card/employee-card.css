@@ -40,7 +40,9 @@
 }
 
 .show {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--spacing-medium);
 }
 
 .employee-details.show {
@@ -64,8 +66,17 @@ dl {
   font-size: var(--font-size-medium);
 }
 
+.employee-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-small);
+}
+
 @media (max-width: 768px) {
   dl {
     gap: var(--spacing-medium);
+  }
+  .employee-buttons {
+    grid-template-columns: 1fr;
   }
 }

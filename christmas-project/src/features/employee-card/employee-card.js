@@ -1,3 +1,6 @@
+import { deleteEmployee } from '../../state/state';
+import { renderEditEmployeePopUp } from '../employee-edit-modal/employee-edit-modal';
+
 const link = document.createElement('link');
 link.rel = 'stylesheet';
 link.href = 'src/features/employee-card/employee-card.css';
@@ -57,6 +60,30 @@ export function createEmployeeCard(employee, clickHandler) {
   addDefinition('Notes:', employee.notes);
 
   detailsDiv.appendChild(dl);
+
+  const buttonsDiv = document.createElement('div');
+  buttonsDiv.classList.add('employee-buttons');
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.classList.add('success');
+
+  deleteBtn.addEventListener('click', () => {
+    deleteEmployee(employee.id);
+  });
+
+  buttonsDiv.appendChild(deleteBtn);
+
+  const editBtn = document.createElement('button');
+  editBtn.textContent = 'Edit';
+
+  editBtn.addEventListener('click', () => {
+    renderEditEmployeePopUp(employee);
+  });
+
+  buttonsDiv.appendChild(editBtn);
+
+  detailsDiv.append(buttonsDiv);
 
   card.append(headerBtn, detailsDiv);
 
